@@ -9,23 +9,39 @@
 /* Begin PBXBuildFile section */
 		300585C92922899700EFC119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300585C82922899700EFC119 /* AppDelegate.swift */; };
 		300585CB2922899700EFC119 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300585CA2922899700EFC119 /* SceneDelegate.swift */; };
-		300585CD2922899700EFC119 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300585CC2922899700EFC119 /* ViewController.swift */; };
+		300585CD2922899700EFC119 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300585CC2922899700EFC119 /* WelcomeViewController.swift */; };
 		300585D02922899700EFC119 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300585CE2922899700EFC119 /* Main.storyboard */; };
 		300585D32922899700EFC119 /* MuseNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 300585D12922899700EFC119 /* MuseNotes.xcdatamodeld */; };
 		300585D52922899A00EFC119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 300585D42922899A00EFC119 /* Assets.xcassets */; };
 		300585D82922899A00EFC119 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300585D62922899A00EFC119 /* LaunchScreen.storyboard */; };
+		300585E0292291B500EFC119 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300585DF292291B500EFC119 /* AuthManager.swift */; };
+		300585E42922A85900EFC119 /* AllEntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300585E32922A85900EFC119 /* AllEntriesViewController.swift */; };
+		300585E6292302CC00EFC119 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300585E5292302CC00EFC119 /* AuthViewController.swift */; };
+		307C93BF29263D5400F5CD49 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307C93BE29263D5400F5CD49 /* AuthResponse.swift */; };
+		30F5536C29383A0100A18192 /* AddEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F5536B29383A0000A18192 /* AddEntryTableViewController.swift */; };
+		30F5536F29383F8100A18192 /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F5536D29383F8100A18192 /* Entry+CoreDataClass.swift */; };
+		30F5537029383F8100A18192 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F5536E29383F8100A18192 /* Entry+CoreDataProperties.swift */; };
+		30F553722938409300A18192 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F553712938409300A18192 /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		300585C52922899700EFC119 /* MuseNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		300585C82922899700EFC119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		300585CA2922899700EFC119 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		300585CC2922899700EFC119 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		300585CC2922899700EFC119 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		300585CF2922899700EFC119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		300585D22922899700EFC119 /* MuseNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MuseNotes.xcdatamodel; sourceTree = "<group>"; };
 		300585D42922899A00EFC119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		300585D72922899A00EFC119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		300585D92922899A00EFC119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		300585DF292291B500EFC119 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		300585E32922A85900EFC119 /* AllEntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEntriesViewController.swift; sourceTree = "<group>"; };
+		300585E5292302CC00EFC119 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		307C93BE29263D5400F5CD49 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		30F5536B29383A0000A18192 /* AddEntryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryTableViewController.swift; sourceTree = "<group>"; };
+		30F5536D29383F8100A18192 /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Entry+CoreDataClass.swift"; path = "MuseNotes/Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		30F5536E29383F8100A18192 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Entry+CoreDataProperties.swift"; path = "MuseNotes/Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		30F553712938409300A18192 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +58,9 @@
 		300585BC2922899700EFC119 = {
 			isa = PBXGroup;
 			children = (
+				30F5536D29383F8100A18192 /* Entry+CoreDataClass.swift */,
+				30F5536E29383F8100A18192 /* Entry+CoreDataProperties.swift */,
+				30F553712938409300A18192 /* Functions.swift */,
 				300585C72922899700EFC119 /* MuseNotes */,
 				300585C62922899700EFC119 /* Products */,
 			);
@@ -60,8 +79,13 @@
 			children = (
 				300585C82922899700EFC119 /* AppDelegate.swift */,
 				300585CA2922899700EFC119 /* SceneDelegate.swift */,
-				300585CC2922899700EFC119 /* ViewController.swift */,
+				30F5536B29383A0000A18192 /* AddEntryTableViewController.swift */,
+				300585CC2922899700EFC119 /* WelcomeViewController.swift */,
+				300585E32922A85900EFC119 /* AllEntriesViewController.swift */,
 				300585CE2922899700EFC119 /* Main.storyboard */,
+				300585E5292302CC00EFC119 /* AuthViewController.swift */,
+				300585DF292291B500EFC119 /* AuthManager.swift */,
+				307C93BE29263D5400F5CD49 /* AuthResponse.swift */,
 				300585D42922899A00EFC119 /* Assets.xcassets */,
 				300585D62922899A00EFC119 /* LaunchScreen.storyboard */,
 				300585D92922899A00EFC119 /* Info.plist */,
@@ -141,10 +165,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				300585CD2922899700EFC119 /* ViewController.swift in Sources */,
+				300585E0292291B500EFC119 /* AuthManager.swift in Sources */,
+				300585E42922A85900EFC119 /* AllEntriesViewController.swift in Sources */,
+				300585CD2922899700EFC119 /* WelcomeViewController.swift in Sources */,
+				30F5536C29383A0100A18192 /* AddEntryTableViewController.swift in Sources */,
+				30F5537029383F8100A18192 /* Entry+CoreDataProperties.swift in Sources */,
+				300585E6292302CC00EFC119 /* AuthViewController.swift in Sources */,
 				300585D32922899700EFC119 /* MuseNotes.xcdatamodeld in Sources */,
 				300585C92922899700EFC119 /* AppDelegate.swift in Sources */,
+				307C93BF29263D5400F5CD49 /* AuthResponse.swift in Sources */,
+				30F5536F29383F8100A18192 /* Entry+CoreDataClass.swift in Sources */,
 				300585CB2922899700EFC119 /* SceneDelegate.swift in Sources */,
+				30F553722938409300A18192 /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
