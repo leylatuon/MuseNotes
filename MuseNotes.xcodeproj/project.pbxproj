@@ -18,6 +18,7 @@
 		300585E42922A85900EFC119 /* AllEntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300585E32922A85900EFC119 /* AllEntriesViewController.swift */; };
 		300585E6292302CC00EFC119 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300585E5292302CC00EFC119 /* AuthViewController.swift */; };
 		307C93BF29263D5400F5CD49 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307C93BE29263D5400F5CD49 /* AuthResponse.swift */; };
+		30EB2069293DE4F700039E19 /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB2068293DE4F700039E19 /* EntryCell.swift */; };
 		30F5536C29383A0100A18192 /* AddEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F5536B29383A0000A18192 /* AddEntryTableViewController.swift */; };
 		30F5536F29383F8100A18192 /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F5536D29383F8100A18192 /* Entry+CoreDataClass.swift */; };
 		30F5537029383F8100A18192 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F5536E29383F8100A18192 /* Entry+CoreDataProperties.swift */; };
@@ -38,6 +39,7 @@
 		300585E32922A85900EFC119 /* AllEntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEntriesViewController.swift; sourceTree = "<group>"; };
 		300585E5292302CC00EFC119 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		307C93BE29263D5400F5CD49 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		30EB2068293DE4F700039E19 /* EntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCell.swift; sourceTree = "<group>"; };
 		30F5536B29383A0000A18192 /* AddEntryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryTableViewController.swift; sourceTree = "<group>"; };
 		30F5536D29383F8100A18192 /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Entry+CoreDataClass.swift"; path = "MuseNotes/Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		30F5536E29383F8100A18192 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Entry+CoreDataProperties.swift"; path = "MuseNotes/Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				30F5536B29383A0000A18192 /* AddEntryTableViewController.swift */,
 				300585CC2922899700EFC119 /* WelcomeViewController.swift */,
 				300585E32922A85900EFC119 /* AllEntriesViewController.swift */,
+				30EB2068293DE4F700039E19 /* EntryCell.swift */,
 				300585CE2922899700EFC119 /* Main.storyboard */,
 				300585E5292302CC00EFC119 /* AuthViewController.swift */,
 				300585DF292291B500EFC119 /* AuthManager.swift */,
@@ -174,6 +177,7 @@
 				300585D32922899700EFC119 /* MuseNotes.xcdatamodeld in Sources */,
 				300585C92922899700EFC119 /* AppDelegate.swift in Sources */,
 				307C93BF29263D5400F5CD49 /* AuthResponse.swift in Sources */,
+				30EB2069293DE4F700039E19 /* EntryCell.swift in Sources */,
 				30F5536F29383F8100A18192 /* Entry+CoreDataClass.swift in Sources */,
 				300585CB2922899700EFC119 /* SceneDelegate.swift in Sources */,
 				30F553722938409300A18192 /* Functions.swift in Sources */,

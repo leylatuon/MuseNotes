@@ -16,32 +16,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIy-ao-wkM">
-                                <rect key="frame" x="93" y="481" width="207" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="Spotify" imagePlacement="leading" title="Log in with Spotify" imagePadding="10">
-                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="didTapLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uDj-1L-bWr"/>
-                                    <segue destination="ZyH-DP-Hi7" kind="presentation" modalPresentationStyle="fullScreen" id="D5G-kN-4fw"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="MX3-Ka-tuA">
-                                <rect key="frame" x="113" y="293" width="166" height="95"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Muse Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esz-b5-upZ">
-                                <rect key="frame" x="131" y="411" width="130" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEF-np-9Ei">
+                                <rect key="frame" x="73" y="289" width="247" height="274"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="MX3-Ka-tuA">
+                                        <rect key="frame" x="40" y="20" width="166" height="95"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Muse Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esz-b5-upZ">
+                                        <rect key="frame" x="58" y="138" width="130" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIy-ao-wkM">
+                                        <rect key="frame" x="20" y="208" width="207" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="Spotify" imagePlacement="leading" title="Log in with Spotify" imagePadding="10">
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTapLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uDj-1L-bWr"/>
+                                            <segue destination="ZyH-DP-Hi7" kind="presentation" modalPresentationStyle="fullScreen" id="D5G-kN-4fw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="274" id="CkX-rA-pdt"/>
+                                    <constraint firstAttribute="width" constant="247" id="jC4-Ik-TKF"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wEF-np-9Ei" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="859-1r-8pu"/>
+                            <constraint firstItem="wEF-np-9Ei" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KDh-tS-w12"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="LogInBtn" destination="JIy-ao-wkM" id="Ehg-dG-naR"/>
@@ -60,36 +74,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryItem" rowHeight="113" id="Sti-ut-rBm">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryItem" rowHeight="113" id="Sti-ut-rBm" customClass="EntryCell" customModule="MuseNotes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="113"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sti-ut-rBm" id="iPk-QT-GHh">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="113"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xxi-Ga-08g">
-                                            <rect key="frame" x="20" y="17" width="93" height="78"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xxi-Ga-08g">
+                                            <rect key="frame" x="20" y="17" width="90" height="78"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="90" id="cn4-iW-X26"/>
                                                 <constraint firstAttribute="width" constant="90" id="edf-qA-6wB"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-B7-cF5">
-                                            <rect key="frame" x="127" y="17" width="246" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-B7-cF5">
+                                            <rect key="frame" x="124" y="17" width="249" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IY-3P-dUF">
-                                            <rect key="frame" x="127" y="46" width="246" height="40"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IY-3P-dUF">
+                                            <rect key="frame" x="124" y="46" width="249" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1IY-3P-dUF" firstAttribute="top" secondItem="DUQ-B7-cF5" secondAttribute="bottom" constant="8" symbolic="YES" id="0Zi-CB-U5P"/>
+                                        <constraint firstItem="DUQ-B7-cF5" firstAttribute="trailing" secondItem="iPk-QT-GHh" secondAttribute="trailingMargin" id="1E3-yT-a5p"/>
+                                        <constraint firstItem="DUQ-B7-cF5" firstAttribute="top" secondItem="iPk-QT-GHh" secondAttribute="topMargin" constant="6" id="1ER-Xc-hVm"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="1IY-3P-dUF" secondAttribute="bottom" constant="36" id="D67-OK-Mu2"/>
+                                        <constraint firstItem="1IY-3P-dUF" firstAttribute="top" secondItem="DUQ-B7-cF5" secondAttribute="bottom" constant="8" symbolic="YES" id="FtF-mj-Okm"/>
+                                        <constraint firstItem="DUQ-B7-cF5" firstAttribute="leading" secondItem="xxi-Ga-08g" secondAttribute="trailing" constant="14" id="GVb-fY-QWD"/>
+                                        <constraint firstItem="DUQ-B7-cF5" firstAttribute="top" secondItem="iPk-QT-GHh" secondAttribute="topMargin" constant="6" id="LAm-Q9-H7F"/>
+                                        <constraint firstItem="DUQ-B7-cF5" firstAttribute="trailing" secondItem="iPk-QT-GHh" secondAttribute="trailingMargin" id="PGG-41-gWm"/>
+                                        <constraint firstItem="xxi-Ga-08g" firstAttribute="leading" secondItem="iPk-QT-GHh" secondAttribute="leadingMargin" id="V88-p8-Y0h"/>
+                                        <constraint firstItem="DUQ-B7-cF5" firstAttribute="leading" secondItem="xxi-Ga-08g" secondAttribute="trailing" constant="14" id="VvY-Nc-ubX"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="xxi-Ga-08g" secondAttribute="bottom" constant="7" id="Yh3-9V-QD6"/>
+                                        <constraint firstItem="xxi-Ga-08g" firstAttribute="top" secondItem="iPk-QT-GHh" secondAttribute="topMargin" constant="6" id="fcU-vM-pD5"/>
+                                        <constraint firstItem="DUQ-B7-cF5" firstAttribute="leading" secondItem="xxi-Ga-08g" secondAttribute="trailing" constant="14" id="i0I-50-ePf"/>
+                                        <constraint firstItem="1IY-3P-dUF" firstAttribute="trailing" secondItem="iPk-QT-GHh" secondAttribute="trailingMargin" id="nGU-zJ-BkJ"/>
+                                        <constraint firstItem="1IY-3P-dUF" firstAttribute="top" secondItem="DUQ-B7-cF5" secondAttribute="bottom" constant="8" symbolic="YES" id="shQ-XP-AFT"/>
+                                        <constraint firstItem="1IY-3P-dUF" firstAttribute="leading" secondItem="xxi-Ga-08g" secondAttribute="trailing" constant="14" id="yaZ-oC-maW"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bodyLabel" destination="1IY-3P-dUF" id="5dC-7K-ldM"/>
+                                    <outlet property="titleLabel" destination="DUQ-B7-cF5" id="ynI-qb-qda"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -8,12 +8,12 @@
 import UIKit
 import CoreData
 protocol AddEntryViewControllerDelegate: AnyObject {
-  func addEntryTableViewControllerDidCancel(
-    _ controller: AddEntryTableViewController)
-  func addEntryTableViewController(
-    _ controller: AddEntryTableViewController,
-    didFinishAdding entry: Entry
-  )
+    func addEntryTableViewControllerDidCancel(
+        _ controller: AddEntryTableViewController)
+    func addEntryTableViewController(
+        _ controller: AddEntryTableViewController,
+        didFinishAdding entry: Entry
+    )
 }
 
 class AddEntryTableViewController: UITableViewController, UITextFieldDelegate {
@@ -38,39 +38,39 @@ class AddEntryTableViewController: UITableViewController, UITextFieldDelegate {
     }
     weak var delegate: AddEntryViewControllerDelegate?
     override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(animated)
-      entryTitle.becomeFirstResponder()
+        super.viewWillAppear(animated)
+        entryTitle.becomeFirstResponder()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     func textField(
-      _ textField: UITextField,
-      shouldChangeCharactersIn range: NSRange,
-      replacementString string: String
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
     ) -> Bool {
-      let oldText = textField.text!
-      let stringRange = Range(range, in: oldText)!
-      let newText = oldText.replacingCharacters(
-        in: stringRange,
-        with: string)
-        doneButton.isEnabled = !newText.isEmpty
-    return true
+        if (textField == entryTitle) {
+            let oldText = textField.text!
+            let stringRange = Range(range, in: oldText)!
+            let newText = oldText.replacingCharacters(in: stringRange, with: string)
+            doneButton.isEnabled = !newText.isEmpty
+        }
+        return true
     }
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-      doneButton.isEnabled = false
-    return true
+        doneButton.isEnabled = false
+        return true
     }
     override func tableView(
-      _ tableView: UITableView,
-      willSelectRowAt indexPath: IndexPath
+        _ tableView: UITableView,
+        willSelectRowAt indexPath: IndexPath
     ) -> IndexPath? {
-    return nil
+        return nil
     }
 }
