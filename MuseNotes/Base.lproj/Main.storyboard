@@ -170,14 +170,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="330.66666666666669" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEN-E8-PoT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEN-E8-PoT">
                                                     <rect key="frame" x="20" y="24" width="353" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="HEN-E8-PoT" secondAttribute="trailing" constant="-42.329999999999998" id="Sql-Iq-DES"/>
+                                                <constraint firstItem="HEN-E8-PoT" firstAttribute="top" secondItem="CyF-j2-OPV" secondAttribute="top" constant="24" id="YJm-s2-T5k"/>
+                                                <constraint firstItem="HEN-E8-PoT" firstAttribute="leading" secondItem="CyF-j2-OPV" secondAttribute="leading" constant="20" symbolic="YES" id="vEP-dr-WwT"/>
+                                                <constraint firstAttribute="bottom" secondItem="HEN-E8-PoT" secondAttribute="bottom" constant="23" id="yFW-40-sSh"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="iG7-wq-phA" kind="show" identifier="SearchTrack" trigger="accessoryAction" id="3Ml-jx-C93"/>
@@ -190,9 +195,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Entry Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OW3-mE-aqo">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Entry Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OW3-mE-aqo">
                                                     <rect key="frame" x="12" y="17" width="361" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -200,6 +204,12 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="OW3-mE-aqo" secondAttribute="trailing" constant="20" symbolic="YES" id="6wI-2h-msG"/>
+                                                <constraint firstItem="OW3-mE-aqo" firstAttribute="top" secondItem="mnl-qR-mo5" secondAttribute="top" constant="17" id="KxU-84-Y9U"/>
+                                                <constraint firstItem="OW3-mE-aqo" firstAttribute="leading" secondItem="mnl-qR-mo5" secondAttribute="leading" constant="12" id="rDI-4p-CkA"/>
+                                                <constraint firstAttribute="bottom" secondItem="OW3-mE-aqo" secondAttribute="bottom" constant="17" id="sh6-oH-KXX"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="319" id="kkP-jX-jdy">
@@ -209,15 +219,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="319"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m8M-uf-nl2">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m8M-uf-nl2">
                                                     <rect key="frame" x="12" y="11" width="361" height="297"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="m8M-uf-nl2" secondAttribute="bottom" constant="11" id="1In-Eg-Oge"/>
+                                                <constraint firstAttribute="trailing" secondItem="m8M-uf-nl2" secondAttribute="trailing" constant="20" symbolic="YES" id="GYD-HU-PZc"/>
+                                                <constraint firstItem="m8M-uf-nl2" firstAttribute="top" secondItem="1yY-cX-0zw" secondAttribute="top" constant="11" id="L6b-x4-nT4"/>
+                                                <constraint firstItem="m8M-uf-nl2" firstAttribute="leading" secondItem="1yY-cX-0zw" secondAttribute="leading" constant="12" id="lap-Dz-VNP"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -277,7 +292,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66W-sj-J0M">
-                                            <rect key="frame" x="106" y="11" width="91.333333333333314" height="21"/>
+                                            <rect key="frame" x="106" y="11" width="91.666666666666686" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="cUx-Q2-hw2"/>
                                             </constraints>

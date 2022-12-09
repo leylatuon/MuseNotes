@@ -21,10 +21,6 @@ protocol SearchViewControllerDelegate: AnyObject {
         _ controller: SearchTableViewController,
         didFinishAdding track: trackInfo
     )
-//    func searchTableViewController(
-//        _ controller: SearchTableViewController,
-//        didFinishEditing entry: Entry
-//    )
 }
 
 class SearchTableViewController: UITableViewController, UISearchBarDelegate {
@@ -77,7 +73,6 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         cell.configureTrack(for: item)
         cell.configureArtist(for: item)
         cell.configureImg(for: item)
-        //        trackLabel.text = results.first?.tracks.items[indexPath.row].name
         return cell
     }
     

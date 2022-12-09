@@ -113,6 +113,7 @@ class AllEntriesViewController: UITableViewController, AddEntryViewControllerDel
                 fatalCoreDataError(error)
             }
         }
+        
     }
     
     func updateItem(item: Entry, newName: String){

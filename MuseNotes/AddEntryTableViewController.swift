@@ -72,7 +72,9 @@ class AddEntryTableViewController: UITableViewController, UITextFieldDelegate, S
             title = "Edit Entry"
             entryTitle.text = item.title
             entryBody.text = item.body
-            trackTitle.text = "\(item.trackName) by \(item.artistName)"
+            if (item.trackName != "" && item.artistName != ""){
+                trackTitle.text = "\(item.trackName) by \(item.artistName)"
+            }
             doneButton.isEnabled = true
         }
     }
@@ -124,8 +126,4 @@ class AddEntryTableViewController: UITableViewController, UITextFieldDelegate, S
             trackTitle.text = "\(track.trackName) by \(track.trackArtist)"
         }
     }
-    
-    //    func addEntryTableViewController(_ controller: AddEntryTableViewController, didFinishEditing entry: Entry) {
-    //        navigationController?.popViewController(animated: true)
-    //    }
 }
