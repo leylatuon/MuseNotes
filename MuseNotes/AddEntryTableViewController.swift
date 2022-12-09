@@ -14,42 +14,81 @@ protocol AddEntryViewControllerDelegate: AnyObject {
         _ controller: AddEntryTableViewController,
         didFinishAdding entry: Entry
     )
+    func addEntryTableViewController(
+        _ controller: AddEntryTableViewController,
+        didFinishEditing entry: Entry
+    )
 }
 
-class AddEntryTableViewController: UITableViewController, UITextFieldDelegate {
+class AddEntryTableViewController: UITableViewController, UITextFieldDelegate, SearchViewControllerDelegate {
+    @IBOutlet weak var searchTrack: UITableViewCell!
     @IBOutlet weak var entryTitle: UITextField!
-    @IBOutlet weak var entryBody: UITextField!
+    @IBOutlet weak var entryBody: UITextView!
+    @IBOutlet weak var trackTitle: UILabel!
     @IBOutlet weak var doneButton: UIBarButtonItem!
     var managedObjectContext: NSManagedObjectContext!
+    var entryToEdit: Entry?
+    var gotTrack = trackInfo()
     @IBAction func cancel() {
         delegate?.addEntryTableViewControllerDidCancel(self)    }
     @IBAction func done() {
-        let newItem = Entry(context: managedObjectContext)
-        newItem.title = entryTitle.text!
-        newItem.body = entryBody.text!
-        newItem.date = Date()
-        do {
-            try managedObjectContext.save()
-            delegate?.addEntryTableViewController(self, didFinishAdding: newItem)
-        }
-        catch {
-            // error
+        if let entry = entryToEdit {
+            entry.title = entryTitle.text!
+            entry.body = entryBody.text!
+            entry.trackName = gotTrack.trackName
+            entry.artistName = gotTrack.trackArtist
+            entry.albumImg = gotTrack.trackImg
+            do {
+                try managedObjectContext.save()
+                delegate?.addEntryTableViewController(self, didFinishEditing: entry)
+            } catch {
+                fatalCoreDataError(error)
+            }
+        } else {
+            let newItem = Entry(context: managedObjectContext)
+            newItem.title = entryTitle.text!
+            newItem.body = entryBody.text!
+            newItem.date = Date()
+            newItem.trackName = gotTrack.trackName
+            newItem.artistName = gotTrack.trackArtist
+            newItem.albumImg = gotTrack.trackImg
+            do {
+                try managedObjectContext.save()
+                delegate?.addEntryTableViewController(self, didFinishAdding: newItem)
+            }
+            catch {
+                fatalCoreDataError(error)
+            }
         }
     }
+    
     weak var delegate: AddEntryViewControllerDelegate?
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        entryTitle.becomeFirstResponder()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        if let item = entryToEdit {
+            title = "Edit Entry"
+            entryTitle.text = item.title
+            entryBody.text = item.body
+            trackTitle.text = "\(item.trackName) by \(item.artistName)"
+            doneButton.isEnabled = true
+        }
     }
+    override func prepare(
+        for segue: UIStoryboardSegue,
+        sender: Any?
+    ){
+        if segue.identifier == "SearchTrack" {
+            let controller = segue.destination as! SearchTableViewController
+            controller.delegate = self
+        }
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "SearchTrack", sender: self)
+    }
+    
     func textField(
         _ textField: UITextField,
         shouldChangeCharactersIn range: NSRange,
@@ -73,4 +112,20 @@ class AddEntryTableViewController: UITableViewController, UITextFieldDelegate {
     ) -> IndexPath? {
         return nil
     }
+    
+    func searchTableViewControllerDidCancel(_ controller: SearchTableViewController) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func searchTableViewController(_ controller: SearchTableViewController, didFinishAdding track: trackInfo) {
+        navigationController?.popViewController(animated: true)
+        gotTrack = track
+        if (track.trackName != "" && track.trackArtist != ""){
+            trackTitle.text = "\(track.trackName) by \(track.trackArtist)"
+        }
+    }
+    
+    //    func addEntryTableViewController(_ controller: AddEntryTableViewController, didFinishEditing entry: Entry) {
+    //        navigationController?.popViewController(animated: true)
+    //    }
 }
