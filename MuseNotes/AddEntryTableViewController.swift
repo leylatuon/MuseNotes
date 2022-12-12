@@ -32,15 +32,25 @@ class AddEntryTableViewController: UITableViewController, UITextFieldDelegate, S
     @IBAction func cancel() {
         delegate?.addEntryTableViewControllerDidCancel(self)    }
     @IBAction func done() {
+        guard let mainView = navigationController?.self.view
+          else { return }
+        let hudView = HudView.hud(inView: mainView, animated: true)
+        let delayInSeconds = 0.6
+        
         if let entry = entryToEdit {
             entry.title = entryTitle.text!
             entry.body = entryBody.text!
             entry.trackName = gotTrack.trackName
             entry.artistName = gotTrack.trackArtist
             entry.albumImg = gotTrack.trackImg
+            hudView.text = "Edited Entry"
             do {
                 try managedObjectContext.save()
-                delegate?.addEntryTableViewController(self, didFinishEditing: entry)
+                DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds)
+                {
+                    hudView.hide()
+                    self.delegate?.addEntryTableViewController(self, didFinishEditing: entry)
+                }
             } catch {
                 fatalCoreDataError(error)
             }
@@ -52,14 +62,20 @@ class AddEntryTableViewController: UITableViewController, UITextFieldDelegate, S
             newItem.trackName = gotTrack.trackName
             newItem.artistName = gotTrack.trackArtist
             newItem.albumImg = gotTrack.trackImg
+            hudView.text = "Added Entry"
             do {
                 try managedObjectContext.save()
-                delegate?.addEntryTableViewController(self, didFinishAdding: newItem)
+                DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds)
+                {
+                    hudView.hide()
+                    self.delegate?.addEntryTableViewController(self, didFinishAdding: newItem)
+                }
             }
             catch {
                 fatalCoreDataError(error)
             }
         }
+        
     }
     
     weak var delegate: AddEntryViewControllerDelegate?
