@@ -14,21 +14,28 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var LogInBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let appDelegate = windowScene?.windows.first
+        let check = UserDefaults.standard.bool(
+            forKey: "DarkMode")
+        if check == true {
+            appDelegate?.overrideUserInterfaceStyle = .dark
+        } else {
+            appDelegate?.overrideUserInterfaceStyle = .light
+        }
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
     @IBAction func didTapLogIn(_ sender: UIButton) {
-        let vc = AuthViewController()
+//        let vc = AuthViewController()
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "AuthView") as? AuthViewController
 //        vc.completionHandler { [weak self] success in
 //            DispatchQueue.main.async {
 //                self?.handleSignIn(success: success)
 //            }
 //        }
-        // get reference to AuthViewController, check completionHandler
-        print("tapped login")
+//         get reference to AuthViewController, check completionHandler
     }
     func handleSignIn(success: Bool){
         guard success else {

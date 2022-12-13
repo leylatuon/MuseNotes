@@ -20,7 +20,7 @@ protocol AddEntryViewControllerDelegate: AnyObject {
     )
 }
 
-class AddEntryTableViewController: UITableViewController, UITextFieldDelegate, SearchViewControllerDelegate {
+class AddEntryTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate, SearchViewControllerDelegate {
     @IBOutlet weak var searchTrack: UITableViewCell!
     @IBOutlet weak var entryTitle: UITextField!
     @IBOutlet weak var entryBody: UITextView!
@@ -33,7 +33,7 @@ class AddEntryTableViewController: UITableViewController, UITextFieldDelegate, S
         delegate?.addEntryTableViewControllerDidCancel(self)    }
     @IBAction func done() {
         guard let mainView = navigationController?.self.view
-          else { return }
+        else { return }
         let hudView = HudView.hud(inView: mainView, animated: true)
         let delayInSeconds = 0.6
         
@@ -44,6 +44,7 @@ class AddEntryTableViewController: UITableViewController, UITextFieldDelegate, S
             entry.artistName = gotTrack.trackArtist
             entry.albumImg = gotTrack.trackImg
             hudView.text = "Edited Entry"
+            hudView.imgName = "EditFile"
             do {
                 try managedObjectContext.save()
                 DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds)
@@ -63,6 +64,7 @@ class AddEntryTableViewController: UITableViewController, UITextFieldDelegate, S
             newItem.artistName = gotTrack.trackArtist
             newItem.albumImg = gotTrack.trackImg
             hudView.text = "Added Entry"
+            hudView.imgName = "AddFile"
             do {
                 try managedObjectContext.save()
                 DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds)
@@ -77,13 +79,27 @@ class AddEntryTableViewController: UITableViewController, UITextFieldDelegate, S
         }
         
     }
-    
+
+//    func textViewDidBeginEditing(_ textView: UITextView) {
+//        if ((entryBody == textView) && (entryBody.textColor == UIColor.lightGray)) {
+//            entryBody.text = nil
+//            entryBody.textColor = UIColor.black
+//        }
+//    }
+//    func textViewDidEndEditing(_ textView: UITextView) {
+//        if ((entryBody == textView) && entryBody.text.isEmpty) {
+//            entryBody.text = "Placeholder"
+//            entryBody.textColor = UIColor.lightGray
+//        }
+//    }
     weak var delegate: AddEntryViewControllerDelegate?
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+//        entryBody.text = "Placeholder"
+//        entryBody.textColor = UIColor.lightGray
         if let item = entryToEdit {
             title = "Edit Entry"
             entryTitle.text = item.title
@@ -106,12 +122,13 @@ class AddEntryTableViewController: UITableViewController, UITextFieldDelegate, S
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "SearchTrack", sender: self)
     }
-    
+
     func textField(
         _ textField: UITextField,
         shouldChangeCharactersIn range: NSRange,
         replacementString string: String
     ) -> Bool {
+
         if (textField == entryTitle) {
             let oldText = textField.text!
             let stringRange = Range(range, in: oldText)!
@@ -142,4 +159,5 @@ class AddEntryTableViewController: UITableViewController, UITextFieldDelegate, S
             trackTitle.text = "\(track.trackName) by \(track.trackArtist)"
         }
     }
+    
 }

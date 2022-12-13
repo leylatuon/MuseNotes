@@ -141,6 +141,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Journal" id="CN1-gs-ks0" userLabel="Home Controller">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="gear" catalog="system" id="KjX-mV-Jbn">
+                            <connections>
+                                <segue destination="nvY-m2-de8" kind="show" id="cH6-0E-njJ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="dwR-6f-8fm">
                             <connections>
                                 <segue destination="jZc-BQ-CIC" kind="show" identifier="AddEntry" id="0Nr-5l-CZv"/>
@@ -151,6 +156,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOB-6Q-6Zw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1806.8702290076335" y="-689.43661971830988"/>
+        </scene>
+        <!--User Settings-->
+        <scene sceneID="wFx-Ud-aWr">
+            <objects>
+                <viewController title="User Settings" id="nvY-m2-de8" customClass="SettingsViewController" customModule="MuseNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c8w-W5-5Om">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2s-Gx-Yli">
+                                <rect key="frame" x="125.66666666666667" y="410.66666666666669" width="141.66666666666663" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGI-cT-eJN">
+                                        <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QmE-LH-ZAt">
+                                        <rect key="frame" x="92.666666666666671" y="0.0" width="51.000000000000014" height="31"/>
+                                        <connections>
+                                            <action selector="darkMode:" destination="nvY-m2-de8" eventType="valueChanged" id="7ZY-6W-1Se"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dHR-LJ-JeP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="u2s-Gx-Yli" firstAttribute="centerY" secondItem="c8w-W5-5Om" secondAttribute="centerY" id="A0f-vG-pYy"/>
+                            <constraint firstItem="u2s-Gx-Yli" firstAttribute="centerX" secondItem="c8w-W5-5Om" secondAttribute="centerX" id="wq3-KD-8Gm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="User Settings" id="PIP-8w-1IU"/>
+                    <connections>
+                        <outlet property="darkModeSwitch" destination="QmE-LH-ZAt" id="TF7-dP-rTy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="83k-MR-AQd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1806.8702290076335" y="37.323943661971832"/>
         </scene>
         <!--Add Entry-->
         <scene sceneID="I7C-1c-IGU">
@@ -390,6 +437,7 @@
     <resources>
         <image name="Logo" width="80" height="80"/>
         <image name="Spotify" width="32" height="32"/>
+        <image name="gear" catalog="system" width="128" height="122"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

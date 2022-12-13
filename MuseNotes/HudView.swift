@@ -33,7 +33,8 @@
 import UIKit
 
 class HudView: UIView {
-  var text = ""
+var text = ""
+var imgName = ""
 
   class func hud(
     inView view: UIView,
@@ -67,7 +68,7 @@ class HudView: UIView {
     roundedRect.fill()
 
     // Draw checkmark
-    if let image = UIImage(named: "Checkmark") {
+    if let image = UIImage(named: imgName) {
       let imagePoint = CGPoint(
         x: center.x - round(image.size.width / 2),
         y: center.y - round(image.size.height / 2) - boxHeight / 8)
@@ -93,8 +94,7 @@ class HudView: UIView {
   func show(animated: Bool) {
     if animated {
       alpha = 0
-      transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-
+        transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
       UIView.animate(
         withDuration: 0.3,
         delay: 0,

@@ -5,11 +5,12 @@
 //  Created by Leyla Tuon on 11/14/22.
 //
 
-import Foundation
 import UIKit
 import CoreData
 
 class AllEntriesViewController: UITableViewController, AddEntryViewControllerDelegate {
+
+    
     lazy var fetchedResultsController:
     NSFetchedResultsController<Entry> = {
         let fetchRequest = NSFetchRequest<Entry>()
@@ -17,7 +18,7 @@ class AllEntriesViewController: UITableViewController, AddEntryViewControllerDel
         fetchRequest.entity = entity
         let sortDescriptor = NSSortDescriptor(
             key: "date",
-            ascending: true)
+            ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.fetchBatchSize = 20
         let fetchedResultsController = NSFetchedResultsController(
@@ -37,16 +38,32 @@ class AllEntriesViewController: UITableViewController, AddEntryViewControllerDel
         navigationController?.popViewController(animated: true)
     }
     func addEntryTableViewController(_ controller: AddEntryTableViewController, didFinishEditing entry: Entry) {
-//        if let index = items.firstIndex(of: entry) {
-//            let indexPath = IndexPath(row: index, section: 0)
-//            if let cell = tableView.cellForRow(at: indexPath) {
-//              configureText(for: cell, with: entry)
-//            }
-//        }
         navigationController?.popViewController(animated: true)
     }
     
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    override func viewDidAppear(_ animated: Bool) {
+      super.viewDidAppear(animated)
+//      let check = UserDefaults.standard.bool(
+//        forKey: "SongLimit")
+//      if check == true {
+//          guard let firstScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+//              return
+//          }
+//          firstScene.windows.forEach { window in
+//              window.overrideUserInterfaceStyle = .dark
+//          }
+//      } else {
+//          guard let firstScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+//              return
+//          }
+//          firstScene.windows.forEach { window in
+//              window.overrideUserInterfaceStyle = .light
+//          }
+//      }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         performFetch()
@@ -197,4 +214,13 @@ extension AllEntriesViewController:
             print("*** controllerDidChangeContent")
             tableView.endUpdates()
         }
+//    func navigationController(
+//      _ navigationController: UINavigationController,
+//      willShow viewController: UIViewController,
+//      animated: Bool ){
+//        // Was the back button tapped?
+//        if viewController === self {
+//          UserDefaults.standard.set(false, forKey: "DarkMode")
+//        }
+//      }
 }
