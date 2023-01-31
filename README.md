@@ -7,3 +7,5 @@ As of now you can write, edit, and delete entries. You can also search and attac
 ![](http://g.recordit.co/IzoEwPQRa3.gif)
 
 [Link to App Proposal](https://docs.google.com/document/d/1q8BA8k9fE4Ky87lim34lLoUGnfA9S4Pj9MmjPcw4hYk/edit)
+
+[Link to Figma](https://www.figma.com/file/8oYKI9Hro4OMAZhx3A2N5X/Music-Journal-App?node-id=0%3A1)
