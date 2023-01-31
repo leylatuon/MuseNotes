@@ -5,3 +5,5 @@ As of now you can write, edit, and delete entries. You can also search and attac
 
 # Demo Gif!
 ![](http://g.recordit.co/IzoEwPQRa3.gif)
+
+[Link to App Proposal](https://docs.google.com/document/d/1q8BA8k9fE4Ky87lim34lLoUGnfA9S4Pj9MmjPcw4hYk/edit)
